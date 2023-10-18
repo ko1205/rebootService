@@ -1,0 +1,12 @@
+[Unit]
+Description=RebootService
+After=network.target remote-fs.target nss-lookup.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/usr/local/rebootService
+ExecStart=/usr/bin/sh /usr/local/rebootService/check_mount.sh
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+BASEDIR=$(dirname "$0")
+mkdir /usr/local/rebootService
+cp $BASEDIR/rebootService.service /usr/local/rebootService
+cp $BASEDIR/check_mount.sh /usr/local/rebootService
+systemctl enable /usr/local/rebootService/rebootService.service
+
+
